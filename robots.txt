@@ -1,0 +1,65 @@
+# 동작구수면다원검사.com (상도역 나눔과 더함 이비인후과)
+# 네이버, 구글, 주요 AI 봇 모두 전체 페이지 크롤링 허용
+
+User-agent: *
+Allow: /
+
+# 네이버 검색로봇
+User-agent: Yeti
+Allow: /
+
+# 구글 검색로봇
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# 구글 AI 학습용 크롤러 (Gemini/AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# 빙 검색로봇
+User-agent: Bingbot
+Allow: /
+
+# OpenAI / ChatGPT 관련 봇
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Claude 관련 봇
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Common Crawl (다수 AI 모델 학습 데이터 소스)
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Apple AI (Siri/Spotlight)
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://xn--c79amri5k71av6t8ujyocgyorvb.com/sitemap.xml
