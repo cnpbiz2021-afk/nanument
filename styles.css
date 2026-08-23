@@ -249,6 +249,7 @@ button {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 8px;
 }
 
 /* Logo Box (Neutral Backdrop for original Teal Logo) */
@@ -259,6 +260,8 @@ button {
   background-color: #FFFFFF;
   padding: 6px 12px;
   border-radius: var(--radius-sm);
+  min-width: 0; /* allow shrinking inside the flex header instead of overflowing */
+  flex-shrink: 1;
 }
 
 .logo-img {
@@ -266,6 +269,7 @@ button {
   width: auto;
   object-fit: contain;
   transition: height var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .logo-title-text {
@@ -275,6 +279,8 @@ button {
   letter-spacing: -0.03em;
   white-space: nowrap;
   line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis; /* truncate gracefully instead of pushing the layout wide */
 }
 
 .header.scrolled .logo-img {
@@ -324,6 +330,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .header-call-btn {
@@ -376,9 +383,14 @@ button {
     display: block;
   }
 
+  .header-actions {
+    gap: 8px;
+  }
+
   .header-actions .header-reserve-btn {
     padding: 8px 14px;
     font-size: 0.875rem;
+    gap: 6px;
   }
 }
 
@@ -654,7 +666,7 @@ section.bg-ivory {
    -------------------------------------------------------------------------- */
 .sleep-study-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 50px;
   align-items: center;
 }
@@ -663,6 +675,11 @@ section.bg-ivory {
   position: relative;
   display: flex;
   justify-content: center;
+  min-width: 0;
+}
+
+.sleep-study-details {
+  min-width: 0; /* lets long Korean phrases wrap inside this column instead of forcing it wider than its grid track */
 }
 
 /* Circular Cropped Style with Pulse Animation */
@@ -755,7 +772,7 @@ section.bg-ivory {
 
 .info-cards-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 16px;
   margin-bottom: 28px;
 }
@@ -766,6 +783,7 @@ section.bg-ivory {
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
+  min-width: 0;
 }
 
 .info-card-header {
@@ -880,6 +898,9 @@ section.bg-ivory {
 }
 
 @media (max-width: 576px) {
+  .header-container {
+    gap: 6px;
+  }
   .logo-link {
     padding: 4px 8px;
     gap: 6px;
@@ -889,6 +910,24 @@ section.bg-ivory {
   }
   .logo-title-text {
     font-size: 0.85rem;
+    max-width: 32vw; /* prevents the clinic name from pushing the reserve button off-screen */
+  }
+  .header-actions {
+    gap: 6px;
+  }
+  .header-actions .header-reserve-btn {
+    padding: 9px 11px;
+    gap: 0;
+  }
+  .header-reserve-btn .reserve-btn-text {
+    display: none; /* icon-only on very narrow screens so it never collides with the logo */
+  }
+  .header-reserve-btn i {
+    font-size: 1.05rem;
+  }
+  .mobile-nav-toggle {
+    padding: 6px;
+    font-size: 1.3rem;
   }
 }
 
