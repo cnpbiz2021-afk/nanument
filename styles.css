@@ -239,7 +239,6 @@ button {
 }
 
 .header.scrolled {
-  height: var(--header-height-scrolled);
   box-shadow: var(--shadow-sm);
   background-color: rgba(255, 255, 255, 0.98);
 }
@@ -281,14 +280,6 @@ button {
   line-height: 1.2;
   overflow: hidden;
   text-overflow: ellipsis; /* truncate gracefully instead of pushing the layout wide */
-}
-
-.header.scrolled .logo-img {
-  height: 40px;
-}
-
-.header.scrolled .logo-title-text {
-  font-size: 0.975rem;
 }
 
 .nav-menu {
@@ -903,27 +894,25 @@ section.bg-ivory {
   }
   .logo-link {
     padding: 4px 8px;
-    gap: 6px;
+    gap: 5px;
   }
   .logo-img {
-    height: 34px;
+    height: 30px;
   }
   .logo-title-text {
-    font-size: 0.85rem;
-    max-width: 32vw; /* prevents the clinic name from pushing the reserve button off-screen */
+    font-size: 0.78rem;
+    max-width: 24vw; /* prevents the clinic name from pushing the reserve button off-screen */
   }
   .header-actions {
     gap: 6px;
   }
   .header-actions .header-reserve-btn {
-    padding: 9px 11px;
-    gap: 0;
-  }
-  .header-reserve-btn .reserve-btn-text {
-    display: none; /* icon-only on very narrow screens so it never collides with the logo */
+    padding: 8px 10px;
+    gap: 5px;
+    font-size: 0.78rem;
   }
   .header-reserve-btn i {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
   }
   .mobile-nav-toggle {
     padding: 6px;
