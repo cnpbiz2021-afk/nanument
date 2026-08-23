@@ -255,7 +255,7 @@ button {
 .logo-link {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background-color: #FFFFFF;
   padding: 6px 12px;
   border-radius: var(--radius-sm);
@@ -268,8 +268,21 @@ button {
   transition: height var(--transition-fast);
 }
 
+.logo-title-text {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--color-primary-dark);
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
 .header.scrolled .logo-img {
   height: 40px;
+}
+
+.header.scrolled .logo-title-text {
+  font-size: 0.975rem;
 }
 
 .nav-menu {
@@ -800,10 +813,14 @@ section.bg-ivory {
   color: var(--color-text-muted);
 }
 
+#sleep-study {
+  overflow: hidden;
+}
+
 @media (max-width: 991px) {
   .sleep-study-wrapper {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
   .sleep-study-circle-container {
     width: 280px;
@@ -815,7 +832,63 @@ section.bg-ivory {
   }
   @keyframes pulseAnimation {
     0% { width: 280px; height: 280px; opacity: 0.8; }
-    100% { width: 340px; height: 340px; opacity: 0; }
+    100% { width: 330px; height: 330px; opacity: 0; }
+  }
+}
+
+@media (max-width: 768px) {
+  .sleep-study-wrapper {
+    gap: 28px;
+    width: 100%;
+  }
+  .sleep-study-visual {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .sleep-study-circle-container {
+    width: 230px;
+    height: 230px;
+    margin: 0 auto;
+  }
+  .pulse-ring {
+    width: 230px;
+    height: 230px;
+  }
+  @keyframes pulseAnimation {
+    0% { width: 230px; height: 230px; opacity: 0.8; }
+    100% { width: 270px; height: 270px; opacity: 0; }
+  }
+  .floating-medical-badge {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 14px;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+  .info-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .insurance-highlight-box {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-link {
+    padding: 4px 8px;
+    gap: 6px;
+  }
+  .logo-img {
+    height: 34px;
+  }
+  .logo-title-text {
+    font-size: 0.85rem;
   }
 }
 
@@ -1089,8 +1162,30 @@ section.bg-ivory {
     padding: 24px;
     gap: 30px;
   }
+  .doctor-name {
+    font-size: 1.6rem;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .doctor-name span {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
   .doctor-credentials {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .doctor-name {
+    font-size: 1.45rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .doctor-name span {
+    font-size: 0.875rem;
   }
 }
 
