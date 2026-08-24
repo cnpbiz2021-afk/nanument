@@ -920,7 +920,7 @@ section.bg-ivory {
     line-height: 1.2;
   }
   .header-actions {
-    gap: 4px;
+    gap: 6px;
   }
   .header-actions .header-reserve-btn {
     padding: 6px 8px;
