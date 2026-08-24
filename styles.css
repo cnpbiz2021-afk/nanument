@@ -282,10 +282,6 @@ button {
   text-overflow: ellipsis; /* truncate gracefully instead of pushing the layout wide */
 }
 
-.logo-line-break {
-  display: none; /* PC/태블릿에서는 한 줄로 표기 */
-}
-
 .nav-menu {
   display: flex;
   align-items: center;
@@ -898,53 +894,49 @@ section.bg-ivory {
 
 @media (max-width: 576px) {
   .header-container {
-    gap: 6px;
+    gap: 4px;
   }
   .logo-link {
-    padding: 4px 8px;
+    padding: 4px 6px;
     gap: 5px;
   }
   .logo-img {
-    height: 30px;
-  }
-  .logo-line-break {
-    display: block; /* 모바일에서는 나눔과더함 / 이비인후과 두 줄로 표기 */
+    height: 26px;
   }
   .logo-title-text {
-    font-size: 0.72rem;
-    max-width: 26vw; /* 두 줄 표기이므로 가로 폭은 줄이고 세로로 배치 */
+    font-size: 0.8rem;
+    max-width: none; /* 한 줄로 길게 표기 */
     overflow: visible;
     text-overflow: clip;
-    white-space: normal;
-    line-height: 1.25;
-    word-break: keep-all; /* wrap between words, not mid-word, for Korean text */
+    white-space: nowrap;
+    line-height: 1.2;
   }
   /* 스크롤 시(.header.scrolled)에도 로고/글자 크기가 변하지 않도록 고정 */
   .header.scrolled .logo-img {
-    height: 30px;
+    height: 26px;
   }
   .header.scrolled .logo-title-text {
-    font-size: 0.72rem;
-    line-height: 1.25;
+    font-size: 0.8rem;
+    line-height: 1.2;
   }
   .header-actions {
-    gap: 6px;
+    gap: 4px;
   }
   .header-actions .header-reserve-btn {
-    padding: 8px 10px;
-    gap: 4px;
-    font-size: 0.7rem;
+    padding: 6px 8px;
+    gap: 3px;
+    font-size: 0.68rem;
   }
   .header-reserve-btn i {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
   .reserve-btn-text {
     display: inline; /* 네이버 예약 텍스트를 버튼에 노출 */
     white-space: nowrap;
   }
   .mobile-nav-toggle {
-    padding: 6px;
-    font-size: 1.3rem;
+    padding: 4px;
+    font-size: 1.2rem;
   }
 }
 
