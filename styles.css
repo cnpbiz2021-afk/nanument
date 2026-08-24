@@ -282,6 +282,10 @@ button {
   text-overflow: ellipsis; /* truncate gracefully instead of pushing the layout wide */
 }
 
+.logo-line-break {
+  display: none; /* PC/태블릿에서는 한 줄로 표기 */
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -903,28 +907,40 @@ section.bg-ivory {
   .logo-img {
     height: 30px;
   }
+  .logo-line-break {
+    display: block; /* 모바일에서는 나눔과더함 / 이비인후과 두 줄로 표기 */
+  }
   .logo-title-text {
     font-size: 0.72rem;
-    max-width: 40vw; /* enough room to show the full clinic name without cutting it off */
+    max-width: 26vw; /* 두 줄 표기이므로 가로 폭은 줄이고 세로로 배치 */
     overflow: visible;
     text-overflow: clip;
     white-space: normal;
-    line-height: 1.15;
+    line-height: 1.25;
     word-break: keep-all; /* wrap between words, not mid-word, for Korean text */
+  }
+  /* 스크롤 시(.header.scrolled)에도 로고/글자 크기가 변하지 않도록 고정 */
+  .header.scrolled .logo-img {
+    height: 30px;
+  }
+  .header.scrolled .logo-title-text {
+    font-size: 0.72rem;
+    line-height: 1.25;
   }
   .header-actions {
     gap: 6px;
   }
   .header-actions .header-reserve-btn {
     padding: 8px 10px;
-    gap: 0;
-    font-size: 0.78rem;
+    gap: 4px;
+    font-size: 0.7rem;
   }
   .header-reserve-btn i {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
   .reserve-btn-text {
-    display: none; /* icon-only on very small screens so the logo name has room */
+    display: inline; /* 네이버 예약 텍스트를 버튼에 노출 */
+    white-space: nowrap;
   }
   .mobile-nav-toggle {
     padding: 6px;
