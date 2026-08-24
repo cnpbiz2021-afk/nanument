@@ -752,8 +752,6 @@ section.bg-ivory {
   color: var(--color-primary-dark);
   margin-bottom: 16px;
   line-height: 1.3;
-  overflow-wrap: break-word; /* lets "Polysomnography" wrap instead of overflowing the column and getting clipped */
-  word-break: break-word;
 }
 
 .sleep-study-details p.intro {
@@ -852,9 +850,6 @@ section.bg-ivory {
     gap: 28px;
     width: 100%;
   }
-  .sleep-study-details h3 {
-    font-size: 1.5rem;
-  }
   .sleep-study-visual {
     flex-direction: column;
     align-items: center;
@@ -905,12 +900,8 @@ section.bg-ivory {
     height: 30px;
   }
   .logo-title-text {
-    font-size: 0.72rem;
-    max-width: 88px;
-    white-space: normal; /* wrap to 2 lines instead of cutting off with "…" */
-    overflow: visible;
-    text-overflow: unset;
-    line-height: 1.2;
+    font-size: 0.78rem;
+    max-width: 24vw; /* prevents the clinic name from pushing the reserve button off-screen */
   }
   .header-actions {
     gap: 6px;
@@ -934,7 +925,7 @@ section.bg-ivory {
    -------------------------------------------------------------------------- */
 .facility-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -1024,6 +1015,12 @@ section.bg-ivory {
 .facility-card:hover .facility-zoom-icon {
   background: var(--color-primary);
   transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .facility-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
