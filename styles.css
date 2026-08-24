@@ -273,7 +273,7 @@ button {
 
 .logo-title-text {
   font-weight: 800;
-  font-size: 1.05rem;
+  font-size: 1.26rem;
   color: var(--color-primary-dark);
   letter-spacing: -0.03em;
   white-space: nowrap;
@@ -904,7 +904,7 @@ section.bg-ivory {
     height: 26px;
   }
   .logo-title-text {
-    font-size: 0.8rem;
+    font-size: 0.96rem;
     max-width: none; /* 한 줄로 길게 표기 */
     overflow: visible;
     text-overflow: clip;
@@ -916,7 +916,7 @@ section.bg-ivory {
     height: 26px;
   }
   .header.scrolled .logo-title-text {
-    font-size: 0.8rem;
+    font-size: 0.96rem;
     line-height: 1.2;
   }
   .header-actions {
